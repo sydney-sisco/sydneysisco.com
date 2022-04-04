@@ -1,3 +1,10 @@
+@media only screen and (max-width: 1024px) {
+  .container {
+    margin: 0px auto;
+    border-width: 0px !important;
+  }
+}
+
 .container {
   max-width: 900px;
   margin: 40px auto;
