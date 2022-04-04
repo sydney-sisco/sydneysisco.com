@@ -4,7 +4,7 @@ function Footer() {
 
   return (
     <div className='footer'>
-      ©Sydney Sisco  | <span className='animated-border-bottom'>fancy mailto link</span>  | Vancouver, Canada
+      ©Sydney Sisco  | <span className='animated-border-bottom'>hello[at]sydneysisco.com</span>  | Vancouver, Canada
     </div>
   );
 }
