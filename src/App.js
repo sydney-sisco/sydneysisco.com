@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import Masonry, {ResponsiveMasonry } from 'react-responsive-masonry';
+
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 import Header from './components/Header';
+import Gallery from './components/Gallery';
+import Footer from './components/Footer';
 
 const style = {
   position: 'absolute',
@@ -21,18 +23,6 @@ const style = {
   p: 4,
 };
 
-
-
-// dynamic import of all images from ./images folder
-function importAll(r) {
-  return r.keys().map(r);
-}
-const images = importAll(require.context('./images/', false, /\.(png|jpe?g|svg)$/));
-
-// const modals = images.map((image) => (
-
-
-const columnsCountBreakPoints = { 350: 1, 750: 2, 900: 3 };
 
 function App() {
   const [open, setOpen] = React.useState(false);
@@ -58,13 +48,12 @@ function App() {
           <img src={images[0]} alt=""/>
         </Box>
       </Modal> */}
-    <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
-      <Masonry gutter={4}>
-        {images.map((image) => (
-          <img src={image} />
-        ))}
-      </Masonry>
-    </ResponsiveMasonry>
+      <div className='page-content'>
+        <Gallery />
+      </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
     
   );

@@ -1,0 +1,21 @@
+.footer {
+  margin: 0 auto;
+  text-align: center;
+  font-family: Roboto;
+  border-top: 2px solid rgba(0, 0, 0, .05);
+  color: rgba(92, 92, 92, .39);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+/* not working */
+.animated-border-bottom {
+  text-decoration: none;
+  background-image: linear-gradient(0deg, currentColor 1px, transparent 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: .125rem;
+  -webkit-transition: background-size .4s ease-in-out, opacity .4s ease-in-out;
+  transition: background-size .4s ease-in-out, opacity .4s ease-in-out;
+}
