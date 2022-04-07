@@ -1,0 +1,25 @@
+.item {
+  /* width: 10%; */
+}
+
+.image {
+  max-height:100%;
+  max-width:100%;
+}
+
+.title {
+    text-decoration: none;
+    color: #222;
+    font-weight: 300;
+    font-size: 14px;
+
+}
+
+.details {
+    text-decoration: none;
+    color: #222;
+    font-weight: 300;
+    font-size: 14px;
+
+    color: rgba(92, 92, 92, .39);
+}
