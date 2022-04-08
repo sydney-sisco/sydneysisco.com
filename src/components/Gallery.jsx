@@ -13,7 +13,7 @@ const columnsCountBreakPoints = { 350: 1, 815: 2 };
 function importAll(r) {
   return r.keys().map(r).reverse();
 }
-const images = importAll(require.context('../images/gallery/', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../images/gallery/thumbnails/', false, /\.(png|jpe?g|svg)$/));
 
 
 function Gallery() {
