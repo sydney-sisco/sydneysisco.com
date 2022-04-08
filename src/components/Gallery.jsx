@@ -9,7 +9,7 @@ imageData = imageData.reverse();
 
 const columnsCountBreakPoints = { 350: 1, 815: 2 };
 
-// dynamic import of all images from ./images folder
+// dynamic import of all thumbnails
 function importAll(r) {
   return r.keys().map(r).reverse();
 }
