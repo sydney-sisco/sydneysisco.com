@@ -14,7 +14,7 @@ function importAll(r) {
   return r.keys().map(r).reverse();
 }
 const images = importAll(require.context('../images/gallery/thumbnails/', false, /\.(png|jpe?g|svg)$/));
-
+console.log(images[0])
 
 function Gallery() {
 
