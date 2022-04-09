@@ -16,7 +16,9 @@ export default function BasicModal({ open, handleClose, image, alt }) {
         aria-describedby="modal-modal-description"
       >
         <Box className='box'>
-          <img src={image} className="modal-image" alt={alt} />
+          <div className='box-padder'>
+            <img src={image} className="modal-image" alt={alt} />
+          </div>
         </Box>
       </Modal>
     </div>
