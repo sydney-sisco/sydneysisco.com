@@ -8,11 +8,16 @@ export default function BasicModal({ open, handleClose, image, title, details })
   
   const imgElement = React.useRef(null);
 
+  const closeModal = () => {
+    setImageWidth(0);
+    handleClose();
+  };
+
   return (
     <div>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={() => closeModal()}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -25,13 +30,15 @@ export default function BasicModal({ open, handleClose, image, title, details })
               onLoad={() => setImageWidth(imgElement.current.width)}
               className="modal-image"
             />
-            <div
-              style={{ width: `${imageWidth}px` }}
-              className="overlay"
-            >
-              <h1>{title}</h1>
-              <p>{details}</p>
-            </div>
+            {imageWidth > 0 && (
+              <div
+                style={{ width: `${imageWidth}px` }}
+                className="overlay"
+              >
+                <h1>{title}</h1>
+                <p>{details}</p>
+              </div>
+            )}
           </div>
         </div>
       </Modal>
