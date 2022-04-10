@@ -23,6 +23,9 @@ export default function BasicModal({ open, handleClose, image, title, details })
       >
         <div className='box'>
           <div className='box-padder'>
+            <a href='#' onClick={() => closeModal()} className='close-button' aria-label='Close'>&times;</a>
+            <a href='#' onClick='' className='prev-button' aria-label='Previous'>&#10094;</a>
+            <a href='#' onClick='' className='next-button' aria-label='Next'>&#10095;</a>
             <img
               src={image}
               alt={title}

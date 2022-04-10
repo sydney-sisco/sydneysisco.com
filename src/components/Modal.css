@@ -22,6 +22,40 @@
   max-height:100%;
 }
 
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+}
+
+.prev-button {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  cursor: pointer;
+
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.next-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  cursor: pointer;
+
+  font-size: 30px;
+  color: #fff;
+  text-decoration: none;
+}
+
 .overlay {
   position: absolute;
   left: 0;
