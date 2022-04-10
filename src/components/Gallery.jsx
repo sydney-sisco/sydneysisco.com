@@ -17,33 +17,33 @@ const images = importAll(require.context('../images/gallery/', false, /\.(png|jp
 
 function Gallery() {
   const [open, setOpen] = React.useState(false);
-  const [modalImage, setModalImage] = React.useState(0);
+  const [modalImageIndex, setModalImageIndex] = React.useState(0);
   const handleOpen = (i) => {
-    // e.preventDefault();
-    setModalImage(i)
+    setModalImageIndex(i)
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
 
   return (
     <>
-    <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
-      <Masonry gutter={64}>
-        {imageData.map(({src, title, data}, i) => (
-          <>
-          <a onClick={()=>handleOpen(i)}>
+      <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
+        <Masonry gutter={64}>
+          {imageData.map(({src, title, data}, i) => (
             <div className='gallery-item'>
-              {/* <img src={'/images/' + src} className='image'/> */}
-              <img src={images_tn[i]} className='image' alt={imageData[i]['title']}/>
+              <img onClick={()=>handleOpen(i)} src={images_tn[i]} className='image' alt={imageData[i]['title']}/>
               <p className='title'>{imageData[i]['title']}</p>
               <p className='details'>{imageData[i]['details']}</p>
             </div>
-          </a>
-          </>
-        ))}
-      </Masonry>
-    </ResponsiveMasonry>
-      <Modal open={open} handleClose={handleClose} image={images[modalImage]} alt={imageData[modalImage]['title']}/>
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
+      <Modal
+        open={open}
+        handleClose={handleClose}
+        image={images[modalImageIndex]}
+        title={imageData[modalImageIndex]['title']}
+        details={imageData[modalImageIndex]['details']}
+      />
     </>
   )
 }

@@ -1,11 +1,12 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import './Modal.css';
 
-export default function BasicModal({ open, handleClose, image, alt }) {
+export default function BasicModal({ open, handleClose, image, title, details }) {
 
-  console.log(image);
+  const [imageWidth, setImageWidth] = React.useState(0);
+  
+  const imgElement = React.useRef(null);
 
   return (
     <div>
@@ -15,11 +16,24 @@ export default function BasicModal({ open, handleClose, image, alt }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className='box'>
+        <div className='box'>
           <div className='box-padder'>
-            <img src={image} className="modal-image" alt={alt} />
+            <img
+              src={image}
+              alt={title}
+              ref={imgElement}
+              onLoad={() => setImageWidth(imgElement.current.width)}
+              className="modal-image"
+            />
+            <div
+              style={{ width: `${imageWidth}px` }}
+              className="overlay"
+            >
+              <h1>{title}</h1>
+              <p>{details}</p>
+            </div>
           </div>
-        </Box>
+        </div>
       </Modal>
     </div>
   );
