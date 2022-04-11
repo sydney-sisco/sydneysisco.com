@@ -9,7 +9,7 @@ export default function Home() {
       <img src={wall} alt="Wall" />
       <div className="bio">
         <h3>Hello. I'm Sydney, a human.</h3>
-        <p>Creation unlocks joy. Make your mark before the machines take over.</p>
+        <p>Creation unlocks long-forgotten joy. Make your mark before the machines take over.</p>
       </div>
       <div className="gallery-button">
         <Button
