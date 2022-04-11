@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
 import Header from './components/Header';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
+import Home from './components/Home';
 import NoMatch from './components/NoMatch';
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Header />
         <div className='page-content'>
           <Routes>
-            <Route path="/" element={<Gallery />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
