@@ -2,6 +2,7 @@ import * as React from 'react';
 import './App.css';
 
 import { BrowserRouter, Routes, Route, Outlet, Link } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
 import Header from './components/Header';
 import Gallery from './components/Gallery';
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop>
       <div className="container">
         <Header />
         <div className='page-content'>
@@ -26,6 +28,7 @@ function App() {
           <Footer />
         </footer>
       </div>
+      </ScrollToTop>
     </BrowserRouter>
   );
 }
