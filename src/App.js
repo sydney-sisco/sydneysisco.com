@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Gallery from './components/Gallery';
 import Footer from './components/Footer';
 import Home from './components/Home';
+import Newsletter from './components/Newsletter';
 import NoMatch from './components/NoMatch';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/newsletter" element={<Newsletter />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>
         </div>
