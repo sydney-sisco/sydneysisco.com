@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import './Newsletter.css';
 
 export default function Newsletter() {
 
@@ -23,29 +25,24 @@ export default function Newsletter() {
   );
 }
 
-
-
-// a basic form
 const CustomForm = ({ status, message, onValidated }) => {
-  let email, name;
+
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+
   const submit = () =>
     email &&
     name &&
-    email.value.indexOf("@") > -1 &&
+    email.indexOf("@") > -1 &&
     onValidated({
-      EMAIL: email.value,
-      NAME: name.value
+      EMAIL: email,
+      NAME: name,
     });
 
   return (
-    <div
-      style={{
-        background: "#efefef",
-        borderRadius: 2,
-        padding: 10,
-        display: "inline-block"
-      }}
-    >
+    <Stack spacing={2}>
+      <h3 className='signup-heading'>Newsletter Signup</h3>
+      {!status && <div>&nbsp;</div>}
       {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
       {status === "error" && (
         <div
@@ -59,23 +56,13 @@ const CustomForm = ({ status, message, onValidated }) => {
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
-      <input
-        style={{ fontSize: "2em", padding: 5 }}
-        ref={node => (name = node)}
-        type="text"
-        placeholder="Your name"
-      />
-      <br />
-      <input
-        style={{ fontSize: "2em", padding: 5 }}
-        ref={node => (email = node)}
-        type="email"
-        placeholder="Your email"
-      />
-      <br />
-      <button style={{ fontSize: "2em", padding: 5 }} onClick={submit}>
-        Submit
-      </button>
-    </div>
+      <TextField label="Name" variant="outlined" type="text" value={name} onChange={e => setName(e.target.value)}/>
+      <TextField label="Email" variant="outlined" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+      <Button variant="contained" onClick={submit} sx={{
+        backgroundColor: '#5c6060',
+      }}>
+        Sign up
+      </Button>
+    </Stack>
   );
 };
