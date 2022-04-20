@@ -29,7 +29,7 @@ function Gallery() {
       <ResponsiveMasonry columnsCountBreakPoints={columnsCountBreakPoints}>
         <Masonry gutter={64}>
           {imageData.map(({src, title, data}, i) => (
-            <div className='gallery-item'>
+            <div key={`gallery-item-${i}`} className='gallery-item'>
               <img onClick={()=>handleOpen(i)} src={images_tn[i]} className='image' alt={imageData[i]['title']}/>
               <p className='title'>{imageData[i]['title']}</p>
               <p className='details'>{imageData[i]['details']}</p>
