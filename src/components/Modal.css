@@ -71,11 +71,12 @@
   padding-top: 20px;
   padding-bottom: 20px;
 
-  visibility: hidden;
+  transition: all 0.25s ease;
+  opacity: 0;
 }
 
 .modal-image:hover + .overlay {
-  visibility: visible;
+  opacity: 1;
 }
 
 .overlay h1 {
