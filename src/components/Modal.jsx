@@ -2,11 +2,9 @@ import * as React from 'react';
 import Modal from '@mui/material/Modal';
 import './Modal.css';
 
-export default function BasicModal({ open, handleClose, image, title, details, images, imageDetails, index, setIndex }) {
+export default function BasicModal({ open, handleClose, images, imageDetails, index, setIndex }) {
 
   const [imageWidth, setImageWidth] = React.useState(0);
-
-  const [galleryIndex, setGalleryIndex] = React.useState(index);
   
   const imgElement = React.useRef(null);
 

@@ -40,9 +40,6 @@ function Gallery() {
       <Modal
         open={open}
         handleClose={handleClose}
-        image={images[modalImageIndex]}
-        title={imageData[modalImageIndex]['title']}
-        details={imageData[modalImageIndex]['details']}
         images={images}
         imageDetails={imageData}
         index={modalImageIndex}
