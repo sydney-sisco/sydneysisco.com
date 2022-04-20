@@ -70,6 +70,12 @@
 
   padding-top: 20px;
   padding-bottom: 20px;
+
+  visibility: hidden;
+}
+
+.modal-image:hover + .overlay {
+  visibility: visible;
 }
 
 .overlay h1 {

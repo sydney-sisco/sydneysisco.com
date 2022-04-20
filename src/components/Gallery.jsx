@@ -43,6 +43,10 @@ function Gallery() {
         image={images[modalImageIndex]}
         title={imageData[modalImageIndex]['title']}
         details={imageData[modalImageIndex]['details']}
+        images={images}
+        imageDetails={imageData}
+        index={modalImageIndex}
+        setIndex={setModalImageIndex}
       />
     </>
   )
