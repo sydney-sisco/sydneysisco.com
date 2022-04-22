@@ -10,11 +10,13 @@
 
 .box-padder {
   position: absolute;
-  text-align: center;
   top: 2%;
   left: 2%;
   bottom: 2%;
   right: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-image {
