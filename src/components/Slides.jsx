@@ -1,16 +1,14 @@
 import * as React from 'react';
 import './Slides.css';
 
-// import slide1 from '../images/slides/PXL_20220209_061934571.jpg'
-
 // dynamic import of all images in src/images/slides
 function importAll(r) {
   return r.keys().map(r).reverse();
 }
 const slides = importAll(require.context('../images/slides/', false, /\.(png|jpe?g|svg)$/));
 
-const delay = 2500;
-
+// the delay between slides
+const delay = 5000;
 
 export default function Slides() {
   const [index, setIndex] = React.useState(0);
@@ -26,10 +24,9 @@ export default function Slides() {
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
-        setIndex((prevIndex) => {
-          console.log(prevIndex);
-          return prevIndex === slides.length - 1 ? 0 : prevIndex + 1;
-        }),
+        setIndex((prevIndex) => 
+          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        ),
       delay
     );
 
@@ -46,13 +43,8 @@ export default function Slides() {
           src={slide}
           alt={`slide-${i}`}
           className={i === index ? 'slide active' : 'slide'}
-          // className="slide"
-          // style={i === index ? 'display: unset' : 'display: none'}
         />
       ))}
-      {/* <img className='slide' src={slides[index]} alt='slide' /> */}
-      
     </div>
-    // <img src={slides[index]} alt="Slideshow showcase" />
   )
 }

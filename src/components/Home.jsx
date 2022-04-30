@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
 import './Home.css';
-// import wall from '../images/PXL_20220209_061934571.jpg'
 import Button from '@mui/material/Button';
 import Slides from './Slides';
 
 export default function Home() {
   return (
     <div className="home">
-      {/* <img src={wall} alt="Wall" /> */}
       <Slides />
       <div className="bio">
         <h3>Hello. I'm Sydney, a human.</h3>
