@@ -8,7 +8,7 @@ function importAll(r) {
 const slides = importAll(require.context('../images/slides/', false, /\.(png|jpe?g|svg)$/));
 
 // the delay between slides
-const delay = 5000;
+const delay = 3000;
 
 export default function Slides() {
   const [index, setIndex] = React.useState(0);
