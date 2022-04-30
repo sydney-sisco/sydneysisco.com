@@ -24,6 +24,11 @@
   max-height:100%;
 }
 
+.button {
+  background: none;
+  border: none;
+}
+
 .close-button {
   position: absolute;
   top: 0;

@@ -23,9 +23,9 @@ export default function BasicModal({ open, handleClose, images, imageDetails, in
       >
         <div className='box'>
           <div className='box-padder'>
-            <a href='#' onClick={() => closeModal()} className='close-button' aria-label='Close'>&times;</a>
-            <a href='#' onClick={() => { setIndex((index + images.length - 1) % images.length)}} className='prev-button' aria-label='Previous'>&#10094;</a>
-            <a href='#' onClick={() => { setIndex((index + 1) % images.length) }} className='next-button' aria-label='Next'>&#10095;</a>
+            <button href='#' onClick={() => closeModal()} className='button close-button' aria-label='Close'>&times;</button>
+            <button href='#' onClick={() => { setIndex((index + images.length - 1) % images.length)}} className='button prev-button' aria-label='Previous'>&#10094;</button>
+            <button href='#' onClick={() => { setIndex((index + 1) % images.length) }} className='button next-button' aria-label='Next'>&#10095;</button>
             <img
               src={images[index]}
               alt={imageDetails[index]['title']}

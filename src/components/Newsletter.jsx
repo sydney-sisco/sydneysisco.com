@@ -1,4 +1,4 @@
-import useState from 'react';
+import React from 'react';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
@@ -27,8 +27,8 @@ export default function Newsletter() {
 
 const CustomForm = ({ status, message, onValidated }) => {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
 
   const submit = () =>
     email &&
