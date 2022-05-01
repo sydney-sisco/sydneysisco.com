@@ -1,10 +1,6 @@
 .slides {
   position: relative;
-  width: 337.5px;
-  height: 369px;
-  /* overflow: hidden; */
-  /* padding-bottom: 110%; */
-  
+  height: 100vw;
 }
 
 .slides > .slide {
