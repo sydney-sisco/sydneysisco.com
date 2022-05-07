@@ -2,8 +2,20 @@ import React from 'react';
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './Newsletter.css';
+
+const theme = createTheme({
+  palette: {
+    secondary: {
+      main: '#5c6060',
+      dark: '#7c8080',
+      contrastText: '#fff',
+    },
+  },
+});
+
 
 export default function Newsletter() {
 
@@ -58,11 +70,15 @@ const CustomForm = ({ status, message, onValidated }) => {
       )}
       <TextField label="Name" variant="outlined" type="text" value={name} onChange={e => setName(e.target.value)}/>
       <TextField label="Email" variant="outlined" type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <Button variant="contained" onClick={submit} sx={{
-        backgroundColor: '#5c6060',
-      }}>
-        Sign up
-      </Button>
+      <ThemeProvider theme={theme}>
+        <Button
+          variant="contained"
+          onClick={submit}
+          color="secondary"
+        >
+          Sign up
+        </Button>
+      </ThemeProvider>
     </Stack>
   );
 };
