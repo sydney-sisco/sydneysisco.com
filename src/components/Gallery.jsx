@@ -13,7 +13,7 @@ function importAll(r) {
   return r.keys().map(r).reverse();
 }
 const images_tn = importAll(require.context('../images/gallery/thumbnails/', false, /\.(png|jpe?g|svg)$/));
-const images = importAll(require.context('../images/gallery/', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../images/gallery/', false, /\.(png|jpe?g|svg|JPE?G)$/));
 
 function Gallery() {
   const [open, setOpen] = React.useState(false);
