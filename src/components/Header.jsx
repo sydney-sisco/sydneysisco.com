@@ -1,16 +1,28 @@
-import './Header.css';
+import styles from './Header.module.css';
 
 
 function Header() {
 
   return (
-    <header className='header'>
-      <h1>
-        <a href="/" className='logo'>
-          Sydney Sisco
+    <header className={styles.header}>
+      <div className={styles.title}>
+        <a href="/" >
+          <h1 className={styles.logo}>
+              Sydney Sisco
+          </h1>
+          <h1 className={styles.logo}>
+              Sydney Sisco
+          </h1>
+          <h1 className={styles.logo}>
+              Sydney Sisco
+          </h1>
         </a>
-      </h1>
-      <h2 className='subheading'>art by human</h2>
+      </div>
+      <div className={styles.subtitle}>
+        <h2 className={styles.subheading}>art by human</h2>
+        <h2 className={styles.subheading}>art by human</h2>
+        <h2 className={styles.subheading}>art by human</h2>
+      </div>
     </header>
   );
 }

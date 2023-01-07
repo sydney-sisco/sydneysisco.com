@@ -1,6 +1,10 @@
 # sydneysisco.com
-Live at [sydneysisco.com](https://www.sydneysisco.com/)
+Live at [sydneysisco.com](https://www.sydneysisco.com/). Hosted on [Digital Ocean](https://m.do.co/c/a93305a85732)'s awesome App platform FOR FREE.
 
+
+## Development
+run the app: `npm start`
+Node: `v16.19.0`
 
 ### Adding a new image
 Currently, images are displayed alphabetically based on their filename. So make sure the latest image is last A-Z. Original and thumbnail should have the name filename.
