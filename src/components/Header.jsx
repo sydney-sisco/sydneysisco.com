@@ -1,4 +1,4 @@
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 
 function Header() {
@@ -19,9 +19,9 @@ function Header() {
         </a>
       </div>
       <div className={styles.subtitle}>
-        <h2 className={styles.subheading}>art by human</h2>
-        <h2 className={styles.subheading}>art by human</h2>
-        <h2 className={styles.subheading}>art by human</h2>
+        <h2 className={styles.subheading}>art by <span className={styles.cray}>human</span></h2>
+        {/* <h2 className={styles.subheading}>art by human</h2>
+        <h2 className={styles.subheading}>art by human</h2> */}
       </div>
     </header>
   );

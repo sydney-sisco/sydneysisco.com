@@ -51,6 +51,8 @@ h1:nth-child(3) {
   margin-bottom: 10px;
 }
 
+$font: "Roboto", monospace;
+$steps: 7;
 .subheading {
   font-size: 24px;
   font-weight: 300;
@@ -58,21 +60,73 @@ h1:nth-child(3) {
   letter-spacing: 5px;
 
   /* overlap */
-  line-height: 0;
-  margin: 0;
+  // line-height: 0;
+  // margin: 0;
 
-  animation: glitch000 2.5s infinite;
+  // animation: glitch000 2.5s infinite;
+  
 }
 
-h2:nth-child(2) {
-  color: #67f3da;
-  animation: glitch001 2.5s infinite;
+.cray {
+  outline: none;
+  // font-size: 10vw;
+  text-align: center;
+  font-family: $font;
+  // min-height: 10vw;
+  // max-width: 80vw;
+  // min-width: 10vw;
+
+  &,
+  * {
+    animation: cray 6s infinite steps($steps);
+    display: inline-block;
+  }
 }
 
-h2:nth-child(3) {
-  color: #f16f6f;
-  animation: glitch010 2.5s infinite;
+@keyframes cray {
+  @for $i from 1 to $steps {
+    $per: 100% / $steps * $i;
+    $weight: (100,
+      200,
+      300,
+      400,
+      100,
+      200,
+      300);
+    $style: (normal,
+      italic,
+      normal,
+      normal);
+    $decor: (none,
+      none,
+      line-through,
+      underline,
+      none,
+      none,
+      none);
+
+
+    $arrayW: random(7);
+    $arrayS: random(4);
+    $arrayD: random(7);
+
+    #{$per} {
+      font-weight: nth($weight, $arrayW);
+      font-style: nth($style, $arrayS);
+      text-decoration: nth($decor, $arrayD);
+    }
+  }
 }
+
+// h2:nth-child(2) {
+//   color: #67f3da;
+//   animation: glitch001 2.5s infinite;
+// }
+
+// h2:nth-child(3) {
+//   color: #f16f6f;
+//   animation: glitch010 2.5s infinite;
+// }
 
 @keyframes glitch000 {
   0% {
