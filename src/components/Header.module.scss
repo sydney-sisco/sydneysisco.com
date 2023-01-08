@@ -99,7 +99,7 @@ $steps: 7;
       normal);
     $decor: (none,
       none,
-      line-through,
+      // line-through,
       underline,
       none,
       none,
@@ -108,7 +108,7 @@ $steps: 7;
 
     $arrayW: random(7);
     $arrayS: random(4);
-    $arrayD: random(7);
+    $arrayD: random(6);
 
     #{$per} {
       font-weight: nth($weight, $arrayW);
