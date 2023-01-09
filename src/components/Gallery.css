@@ -14,7 +14,7 @@
 
 .title {
     text-decoration: none;
-    color: #222;
+    color: #ffffff;
     font-weight: 300;
     font-size: 14px;
     margin: 10px 0 10px 0;
@@ -22,9 +22,8 @@
 
 .details {
     text-decoration: none;
-    color: #222;
     font-weight: 400;
     font-size: 14px;
-    color: rgba(92, 92, 92, .39);
+    color: #969ba1;
     margin: 0 0 10px 0;
 }

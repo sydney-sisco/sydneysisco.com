@@ -2,7 +2,8 @@
   margin: 0 auto;
   text-align: center;
   font-family: Roboto;
-  border-bottom: 2px solid rgba(0, 0, 0, .05);
+  // border-bottom: 2px solid rgba(0, 0, 0, .05);
+  border-bottom: 2px solid #ffffff;
 }
 
 .title {
@@ -19,7 +20,7 @@
 }
 
 .logo {
-  color: #222;
+  color: #fff;
   font-weight: 300;
   font-size: 44px;
   letter-spacing: 6px;

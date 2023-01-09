@@ -1,4 +1,7 @@
-
+.home {
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 20px;
+}
 
 .bio {
   text-align: center;
@@ -6,6 +9,7 @@
 
 .gallery-button {
   margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 

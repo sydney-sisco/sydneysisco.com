@@ -1,10 +1,9 @@
-
-
 .container {
   max-width: 900px;
   margin: 40px auto;
   border-style: solid;
-  border-color: rgba(0, 0, 0, .05);
+  /* border-color: rgba(0, 0, 0, .05); */
+  border-color: #ffffff;
   border-width: 2px;
 
   padding: 20px 20px 0;

@@ -1,7 +1,9 @@
 import './Home.css';
 import Button from '@mui/material/Button';
 import Slides from './Slides';
+import GlitchButton from './GlitchButton.jsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Gallery from './Gallery';
 
 const theme = createTheme({
   palette: {
@@ -20,26 +22,12 @@ const theme = createTheme({
 
 export default function Home() {
   return (
+    <>
     <div className="home">
       <Slides />
       <div className="bio">
         <h3>Hello. I'm Sydney, a human.</h3>
         <p>Creation unlocks long-forgotten joy. Make your mark before the machines take over.</p>
-      </div>
-      <div className="gallery-button">
-        <ThemeProvider theme={theme}>
-          <Button
-            href="/gallery"
-            variant="contained"
-            color="primary"
-            sx={{
-              borderRadius: '300px',
-              padding: '21px 34px',
-            }}
-          >
-            See the gallery
-          </Button>
-        </ThemeProvider>
       </div>
       <div className="newsletter-button">
         <ThemeProvider theme={theme}>
@@ -57,6 +45,25 @@ export default function Home() {
           </Button>
         </ThemeProvider>
       </div>
+
     </div>
+      <div className="gallery-button">
+        <GlitchButton href="/gallery">gallery</GlitchButton>
+        {/* <ThemeProvider theme={theme}>
+          <Button
+            href="/gallery"
+            variant="contained"
+            color="primary"
+            sx={{
+              borderRadius: '300px',
+              padding: '21px 34px',
+            }}
+          >
+            See the gallery
+          </Button>
+        </ThemeProvider> */}
+      </div>
+    <Gallery />
+    </>
   );
 }

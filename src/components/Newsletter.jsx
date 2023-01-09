@@ -6,13 +6,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import './Newsletter.css';
 
-const theme = createTheme({
+const darkTheme = createTheme({
   palette: {
-    secondary: {
-      main: '#5c6060',
-      dark: '#7c8080',
-      contrastText: '#fff',
-    },
+    mode: 'dark',
   },
 });
 
@@ -52,33 +48,35 @@ const CustomForm = ({ status, message, onValidated }) => {
     });
 
   return (
-    <Stack spacing={2}>
-      <h3 className='signup-heading'>Newsletter Signup</h3>
-      {!status && <div>&nbsp;</div>}
-      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-      {status === "error" && (
-        <div
-          style={{ color: "red" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          style={{ color: "green" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      <TextField label="Name" variant="outlined" type="text" value={name} onChange={e => setName(e.target.value)}/>
-      <TextField label="Email" variant="outlined" type="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <ThemeProvider theme={theme}>
-        <Button
-          variant="contained"
-          onClick={submit}
-          color="secondary"
-        >
-          Sign up
-        </Button>
-      </ThemeProvider>
-    </Stack>
+    <ThemeProvider theme={darkTheme}>
+      <Stack spacing={2}>
+        <h3 className='signup-heading'>Newsletter Signup</h3>
+        {!status && <div>&nbsp;</div>}
+        {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
+        {status === "error" && (
+          <div
+            style={{ color: "red" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <div
+            style={{ color: "green" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        <TextField color="secondary" label="Name" variant="outlined" type="text" value={name} onChange={e => setName(e.target.value)}/>
+        <TextField color="secondary" label="Email" variant="outlined" type="email" value={email} onChange={e => setEmail(e.target.value)} />
+        {/* <ThemeProvider theme={theme}> */}
+          <Button
+            variant="contained"
+            onClick={submit}
+            color="secondary"
+          >
+            Sign up
+          </Button>
+        {/* </ThemeProvider> */}
+      </Stack>
+    </ThemeProvider>
   );
 };

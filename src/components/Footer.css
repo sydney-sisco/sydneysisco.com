@@ -2,8 +2,10 @@
   margin: 0 auto;
   text-align: center;
   font-family: Roboto;
-  border-top: 2px solid rgba(0, 0, 0, .05);
-  color: rgba(92, 92, 92, .39);
+  /* border-top: 2px solid rgba(0, 0, 0, .05); */
+  border-top: 2px solid #ffffff;
+  /* color: rgba(92, 92, 92, .39); */
+  color: #ffffff;
   padding-top: 50px;
   padding-bottom: 50px;
 }

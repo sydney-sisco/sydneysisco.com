@@ -1,0 +1,111 @@
+// body {
+//   background-color: #232323;
+// }
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 5em;
+  overflow: hidden;
+  // background-color: #232323;
+
+  
+
+  // display: inline-block;
+
+  
+}
+
+
+
+.glitch {
+  font: {
+    size: 5em;
+    family: 'Raleway', sans-serif;
+    weight: 700;
+  }
+
+  // background-color: #333333;
+  padding: 0 1em;
+  border-radius: 4em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #fff;
+  letter-spacing: 5px;
+
+  &:before,
+  &:after {
+    display: block;
+    content: attr(data-glitch);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+  }
+
+  &:after {
+    color: #0ff;
+    z-index: -1;
+    animation: glitch-left 2s ease-in-out both infinite;
+    animation-direction: alternate;
+  }
+
+  &:before {
+    color: #f0f;
+    z-index: -2;
+    animation: glitch-right 2s ease-in-out both infinite;
+    animation-direction: alternate;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .glitch {
+    font-size: 3em;
+  }
+
+  .wrapper {
+    height: 3.5em;
+    border-radius: 1.5em;
+  }
+}
+
+$step: 2px;
+$x: $step * 2.5;
+$y: $step;
+
+@keyframes glitch-left {
+  0% {
+    transform: translate(- $x, $y)
+  }
+
+  50% {
+    transform: translate(- 2px, 0px)
+  }
+
+  to {
+    transform: translate(- $x, -$y)
+  }
+}
+
+@keyframes glitch-right {
+  0% {
+    transform: translate($x, - $y)
+  }
+
+  50% {
+    transform: translate(2px, 0px)
+  }
+
+  to {
+    transform: translate($x, $y)
+  }
+}
